@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sipat Demo</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <div class="header">
+    <img src="images/logo.jpg" alt="Sipat Logo" class="logo">
+  </div>
+
+  <div class="card">
+    <p>Income: <span id="income">₱0</span></p>
+    <p>Spending: <span id="expense">₱0</span></p>
+    <p><b>Balance: <span id="remaining">₱0</span></b></p>
+  </div>
+
+  <div class="card">
+    <input type="number" id="amount" placeholder="Amount (e.g. 500 or -100)">
+    <input type="text" id="name" placeholder="Description">
+    <button onclick="add()">Add</button>
+  </div>
+
+  <div class="card">
+    <ul id="list"></ul>
+  </div>
+
+  <script src="index.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
